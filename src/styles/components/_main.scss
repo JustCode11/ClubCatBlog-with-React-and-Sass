@@ -1,0 +1,85 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.intro {
+    background: #222;
+    position: relative;
+
+    @supports (background-blend-mode: multiply) {
+        background: url('../../assets/img/intro.jpg'), radial-gradient(#aaa, #999);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: multiply;
+    }
+
+    #bg-video {
+        display: none;
+    }
+
+    #bg-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: u.rem(80);
+        left: 0;
+        z-index: -1;
+    }
+
+    .text-intro {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: u.rem(350);
+        text-align: right;
+        top: 20%;
+        right: 3%;
+
+        span {
+            text-transform: uppercase;
+            font-size: u.rem(18);
+            letter-spacing: u.rem(5);
+            font-family: g.$headerFont;
+        }
+
+        h1 {
+            white-space: pre-line;
+        }
+    }
+
+    @include u.breakpoint-down(mobile) {
+        height: u.rem(357);
+    }
+
+    @include u.breakpoint-up(mobile) {
+        background: none;
+        position: static;
+        height: calc(100vh - u.rem(80));
+
+        #bg-video {
+            display: block;
+        }
+
+        .text-intro {
+            width: u.rem(500);
+
+            span {
+                margin-bottom: u.rem(20);
+            }
+
+            h1 {
+                line-height: u.rem(74);
+            }
+        }
+    }
+
+    @include u.breakpoint-up(desktop) {
+
+        .text-intro {
+            width: u.rem(500);
+            top: 50%;
+            left: 10%;
+        }
+    }
+}

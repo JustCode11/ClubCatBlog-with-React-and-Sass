@@ -1,0 +1,11 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.footer {
+    background-color: g.$footerColor;
+    color: g.$white;
+    height: u.rem(150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

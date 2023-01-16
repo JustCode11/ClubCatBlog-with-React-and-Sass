@@ -1,0 +1,83 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.contact {
+
+    &__bg {
+        background: g.$bgDarkBlue;
+        padding: u.rem(50) 0;
+
+        &__container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: u.rem(220);
+                height: u.rem(220);
+                border-radius: 50%;
+                object-fit: cover;
+                border: u.rem(10) solid g.$bgLightBlue;
+            }
+
+            &__header {
+                font-family: g.$headerFont;
+                font-size: u.rem(30);
+                line-height: u.rem(33);
+            }
+
+            &__info {
+                color: g.$white;
+                font-size: u.rem(13);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include u.breakpoint-up(mobile) {
+        flex-direction: row;
+        width: 75%;
+    }
+
+    @include u.breakpoint-up(desktop) {
+        width: 40%;
+    }
+
+    input[type] {
+        width: 100%;
+    }
+
+    input[type="email"] {
+        @include u.breakpoint-up(mobile) {
+            width: 80%;
+            padding: 0 u.rem(20);
+            margin-right: u.rem(10);
+        }
+    }
+
+    input[type="submit"] {
+        background: g.$VeryDarkBlue;
+        color: g.$white;
+        font-weight: bold;
+        letter-spacing: u.rem(0);
+        margin-top: u.rem(15);
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+            color: g.$bgDarkBlue;
+            background: g.$bgLightBlue;
+        }
+
+        @include u.breakpoint-up(mobile) {
+            width: 20%;
+            margin-top: 0;
+        }
+    }
+}

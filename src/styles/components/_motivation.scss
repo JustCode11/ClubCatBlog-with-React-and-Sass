@@ -1,0 +1,71 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.motivation {
+    position: relative;
+    margin-bottom: u.rem(30);
+
+    &__bg {
+        background: g.$bgVeryLightBlue;
+
+        &__cards {
+            display: grid;
+            grid-gap: u.rem(30);
+
+            @include u.breakpoint-up(mobile) {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-auto-rows: 1fr 1fr;
+            }
+
+            &__card {
+                border-radius: 50px 50px 50px 50px / 15px 15px 15px 15px;
+                z-index: 1;
+
+                @include u.breakpoint-up(mobile) {
+                    border-radius: u.rem(15);
+                }
+
+                img {
+                    border-radius: 50px 50px 50px 50px / 15px 15px 15px 15px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+
+                    @include u.breakpoint-up(mobile) {
+                        border-radius: u.rem(15);
+                    }
+                }
+
+                &:not(:last-child) {
+                    height: u.rem(400);
+                }
+
+                &:last-child {
+                    background-color: white;
+                    padding: u.rem(20);
+                    font-size: u.rem(14);
+                }
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    align-self: end;
+                }
+
+                &:nth-child(3) {
+                    @include u.breakpoint-down(desktop) {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &__darkBg {
+        background: g.$bgDarkBlue;
+        width: 100%;
+        height: u.rem(550);
+        position: absolute;
+        bottom: u.rem(-30);
+    }
+}

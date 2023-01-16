@@ -1,0 +1,22 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.iCard {
+    background-color: white;
+    border-radius: u.rem(5);
+    padding: u.rem(25) u.rem(25) u.rem(50) u.rem(25);
+    z-index: 1;
+
+    img {
+        border-radius: u.rem(5);
+    }
+
+    p {
+        font-size: u.rem(14);
+        line-height: u.rem(26);
+    }
+
+    a {
+        @include u.link-style;
+    }
+}

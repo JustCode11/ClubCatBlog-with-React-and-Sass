@@ -1,0 +1,80 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.review {
+    &__bg {
+        background: g.$bgVeryLightBlue;
+        padding: u.rem(70) 0;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+
+            @include u.breakpoint-up(mobile) {
+                clear: both;
+                flex-direction: row;
+            }
+
+            &__text {
+                padding: u.rem(25) u.rem(15);
+
+                @include u.breakpoint-up(mobile) {
+                    width: 50%;
+                }
+
+                p {
+                    font-size: u.rem(14);
+                    line-height: u.rem(24);
+                }
+            }
+
+            &__img {
+                position: relative;
+                margin-top: u.rem(50);
+                align-self: center;
+
+                @include u.breakpoint-up(mobile) {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .img-background {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        width: u.rem(300);
+                        height: u.rem(300);
+                        border-radius: 50%;
+                        background: g.$bgLightBlue;
+                        position: absolute;
+                        top: u.rem(-50);
+                        left: u.rem(30);
+
+                        @include u.breakpoint-up(desktop) {
+                            width: u.rem(378);
+                            height: u.rem(378);
+                            top: u.rem(-65);
+                            left: u.rem(100);
+                        }
+                    }
+
+                    img {
+                        width: u.rem(300);
+                        height: u.rem(300);
+                        border-radius: 50%;
+                        object-fit: cover;
+                        position: relative;
+                        z-index: 1;
+
+                        @include u.breakpoint-up(desktop) {
+                            width: u.rem(378);
+                            height: u.rem(378);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

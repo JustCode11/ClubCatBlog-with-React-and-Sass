@@ -1,0 +1,26 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.infoBox {
+    border-radius: u.rem(25);
+    background-color: g.$white;
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+    padding: u.rem(25) u.rem(20);
+    z-index: 1;
+
+    h4 {
+        text-transform: uppercase;
+        color: g.$bgDarkBlue;
+    }
+
+    p {
+        font-size: u.rem(14);
+    }
+
+    a {
+        @include u.link-style;
+        font-size: u.rem(14);
+    }
+}

@@ -1,0 +1,73 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.infos {
+    position: relative;
+
+    &__bg {
+        background-color: g.$bgVeryLightBlue;
+
+        @include u.breakpoint-up(desktop) {
+            padding-bottom: u.rem(1);
+        }
+
+        &__container {
+
+            &__top {
+                margin-bottom: u.rem(45);
+            }
+        }
+    }
+
+    &__bgDark {
+        position: absolute;
+        background-color: g.$bgDarkBlue;
+        height: u.rem(700);
+        width: 100%;
+        top: 0;
+
+        @include u.breakpoint-up(mobile) {
+            height: u.rem(815);
+        }
+    }
+}
+
+.img-container {
+    img {
+        border-radius: u.rem(25);
+        position: relative;
+        z-index: 1;
+
+        @include u.breakpoint-up(mobile) {
+            height: u.rem(767);
+            width: 90%;
+            object-fit: cover;
+        }
+
+        @include u.breakpoint-up(desktop) {
+            height: u.rem(1071);
+            width: 65%;
+        }
+    }
+}
+
+.infoBox-container {
+    display: grid;
+    grid-gap: u.rem(25);
+
+    @include u.breakpoint-up(mobile) {
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        float: right;
+        position: relative;
+        bottom: u.rem(250);
+        margin-bottom: u.rem(-150);
+    }
+
+    @include u.breakpoint-up(desktop) {
+        width: 42%;
+        bottom: u.rem(625);
+        margin-bottom: u.rem(-525);
+    }
+}

@@ -1,0 +1,33 @@
+@use '../utils/' as u;
+
+$spacingMobile: 50;
+
+$spacingDesktop: 120;
+
+$distance: 15;
+$distanceM: 30;
+$distanceLg: 45;
+
+.container {
+    margin-left: u.rem($spacingMobile);
+    margin-right: u.rem($spacingMobile);
+
+    @include u.breakpoint-up(desktop) {
+        //margin-left: $spacingDesktop;
+        //margin-right: $spacingDesktop;
+        max-width: u.rem(1140);
+        margin: 0 auto;
+    }
+}
+
+.spacing>* {
+    margin-bottom: $distance;
+}
+
+.spacingM>* {
+    margin-bottom: $distanceM;
+}
+
+.spacingLg>* {
+    margin-bottom: $distanceLg;
+}

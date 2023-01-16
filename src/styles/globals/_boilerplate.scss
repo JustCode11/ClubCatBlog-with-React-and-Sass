@@ -1,0 +1,147 @@
+@use '../utils/' as u;
+@use './fonts' as f;
+@use './colors' as c;
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    //overflow-x: hidden;
+    font-family: f.$primaryFont;
+}
+
+h1 {
+    font-size: u.rem(30);
+    text-transform: uppercase;
+    font-family: f.$headerFont;
+    letter-spacing: u.rem(5);
+    line-height: u.rem(32);
+
+    @include u.breakpoint-up(mobile) {
+        font-size: u.rem(72);
+        line-height: u.rem(67);
+    }
+}
+
+h2 {
+    font-family: f.$headerFont;
+    font-size: u.rem(36);
+
+    @include u.breakpoint-up(mobile) {
+        font-size: u.rem(57);
+        line-height: u.rem(68);
+    }
+}
+
+h3 {
+    @include u.breakpoint-up(mobile) {
+        font-size: u.rem(30);
+    }
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+input[type="email"] {
+    outline: none;
+    border: none;
+    padding: u.rem(10) u.rem(20);
+    font-size: u.rem(14);
+    border-radius: u.rem(20);
+    border: 1px solid c.$bgLightBlue;
+}
+
+input[type="submit"] {
+    @include u.button-style;
+}
+
+button {
+    border: none;
+    background-color: c.$bgDarkBlue;
+    outline: none;
+    cursor: pointer;
+    padding: u.rem(12) u.rem(25);
+    text-transform: uppercase;
+    font-size: u.rem(14);
+    letter-spacing: u.rem(2);
+    border-radius: u.rem(20);
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+        background-color: c.$bgLightBlue;
+    }
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

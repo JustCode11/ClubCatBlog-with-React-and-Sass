@@ -1,0 +1,126 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.tipps {
+    @include u.breakpoint-up(mobile) {
+        margin-bottom: u.rem(-250);
+    }
+
+    @include u.breakpoint-up(desktop) {
+        margin-bottom: 0;
+    }
+
+    &__bg {
+        background: g.$bgVeryLightBlue;
+
+        @include u.breakpoint-up(desktop) {
+            padding-top: u.rem(350);
+        }
+
+        &__container {
+            position: relative;
+            bottom: u.rem(170);
+
+            @include u.breakpoint-up(desktop) {
+                bottom: 0;
+            }
+
+            &__top {
+                height: u.rem(310);
+                margin-bottom: u.rem(60);
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: u.rem(20);
+
+                    @include u.breakpoint-up(mobile) {
+                        width: 90%;
+                        float: right;
+                    }
+
+                    @include u.breakpoint-up(desktop) {
+                        width: 75%;
+                        float: none;
+                        margin: 0 auto;
+                    }
+                }
+
+                @include u.breakpoint-up(mobile) {
+                    height: u.rem(542);
+                }
+            }
+
+            &__bottom {
+                display: flex;
+                flex-direction: column;
+
+                @include u.breakpoint-up(desktop) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                &__darkBox {
+                    height: u.rem(310);
+                    background: g.$dark;
+                    color: white;
+                    border-radius: u.rem(20);
+                    margin-bottom: u.rem(60);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0 u.rem(30);
+
+                    span {
+                        text-transform: uppercase;
+                        font-size: u.rem(24);
+                    }
+
+                    p {
+                        font-size: u.rem(36);
+                        font-family: g.$headerFont;
+
+                        @include u.breakpoint-up(mobile) {
+                            font-size: u.rem(60);
+                            line-height: u.rem(62);
+                        }
+                    }
+
+                    @include u.breakpoint-up(mobile) {
+                        width: 65%;
+                        height: u.rem(343);
+                        position: relative;
+                        bottom: u.rem(200);
+                        margin-bottom: 0;
+                    }
+
+                    @include u.breakpoint-up(desktop) {
+                        width: 40%;
+                    }
+                }
+
+                &__lightBox {
+                    background-color: white;
+                    border-radius: u.rem(20);
+                    padding: u.rem(25);
+                    -webkit-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.4);
+                    -moz-box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.4);
+                    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.4);
+
+                    ol {
+                        padding-left: u.rem(20);
+                    }
+
+                    @include u.breakpoint-up(mobile) {
+                        position: relative;
+                        bottom: u.rem(150);
+                    }
+
+                    @include u.breakpoint-up(desktop) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

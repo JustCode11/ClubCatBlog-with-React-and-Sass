@@ -1,0 +1,145 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+.form {
+    position: relative;
+    margin-bottom: u.rem(100);
+
+    &__bg {
+        background: g.$bgVeryLightBlue;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            background: g.$white;
+            border-radius: u.rem(20);
+            -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3);
+            padding: u.rem(40) u.rem(15);
+            position: relative;
+            z-index: 1;
+
+            @include u.breakpoint-up(mobile) {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: u.rem(40) u.rem(25);
+            }
+
+            @include u.breakpoint-up(desktop) {
+                width: 60%;
+            }
+
+            &__top {
+                text-align: center;
+                margin-bottom: u.rem(30);
+
+                @include u.breakpoint-up(mobile) {
+                    width: 47%;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: u.rem(14);
+                }
+
+                &__socials {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0 auto;
+                    width: 60%;
+
+                    @include u.breakpoint-up(mobile) {
+                        margin: 0;
+                    }
+
+                    @include u.breakpoint-up(desktop) {
+                        width: 40%;
+                    }
+
+                    a {
+                        width: u.rem(25);
+                        height: u.rem(25);
+
+                        svg {
+                            width: inherit;
+                            height: inherit;
+                            color: g.$bgDarkBlue;
+                        }
+
+                        svg,
+                        path {
+                            transition: fill ease-in-out 200ms;
+                        }
+
+                        &:hover {
+
+                            svg,
+                            path {
+                                fill: g.$VeryDarkBlue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__bottom {
+                @include u.breakpoint-up(mobile) {
+                    width: 47%;
+                }
+
+                input[type="submit"] {
+                    width: 100%;
+                    color: g.$white;
+                    font-weight: bold;
+                    padding: u.rem(8) u.rem(10);
+
+                    &:hover {
+                        background-color: g.$VeryDarkBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    &__bgDark {
+        background: g.$bgDarkBlue;
+        width: 100%;
+        height: u.rem(500);
+        position: absolute;
+        bottom: u.rem(-100);
+
+        @include u.breakpoint-up(mobile) {
+            height: u.rem(250);
+        }
+    }
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: u.rem(14);
+    }
+
+    input {
+        border: none;
+        font-size: u.rem(14);
+        border-bottom: u.rem(1) solid g.$bgDarkBlue;
+        border-radius: 0;
+        padding: u.rem(10) u.rem(20);
+        outline: none;
+    }
+}
+
+.form-row-container {
+    @include u.breakpoint-up(mobile) {
+        display: flex;
+        justify-content: space-between;
+
+        .form-row {
+            width: 48%;
+        }
+    }
+}

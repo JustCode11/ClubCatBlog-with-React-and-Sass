@@ -1,0 +1,29 @@
+{
+  "name": "nicepage-club-cat-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./public/index.html",
+    "build": "parcel build ./public/index.html --public-url .",
+    "compile:sass": "sass --watch src/styles:assets/css"
+  },
+  "author": "JustCode11",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "parcel": "^2.8.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "video-react": "^0.16.0"
+  },
+  "devDependencies": {
+    "@parcel/resolver-glob": "^2.8.2",
+    "process": "^0.11.10",
+    "sass": "^1.57.1"
+  }
+}

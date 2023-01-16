@@ -1,0 +1,16 @@
+@use '../globals/' as g;
+@use '../utils/' as u;
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 u.rem(20);
+    height: u.rem(80);
+    align-items: center;
+
+    nav {
+        a:not(:last-child) {
+            margin-right: u.rem(20);
+        }
+    }
+}

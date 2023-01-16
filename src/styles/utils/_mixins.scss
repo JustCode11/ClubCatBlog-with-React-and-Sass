@@ -1,0 +1,43 @@
+@use 'functions' as f;
+@use '../globals/colors' as c;
+
+@mixin button-style {
+    border: none;
+    background-color: c.$bgDarkBlue;
+    outline: none;
+    cursor: pointer;
+    padding: f.rem(12) f.rem(25);
+    text-transform: uppercase;
+    font-size: f.rem(14);
+    letter-spacing: f.rem(2);
+    border-radius: f.rem(20);
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+        background-color: c.$bgLightBlue;
+    }
+}
+
+@mixin link-style {
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + f.rem(10));
+        height: f.rem(3);
+        background-color: c.$bgDarkBlue;
+        bottom: f.rem(-2);
+        left: f.rem(-5);
+        z-index: -1;
+        transition: height ease-in-out 200ms;
+    }
+
+    &:hover {
+
+        &::after {
+            height: f.rem(25);
+        }
+    }
+}
