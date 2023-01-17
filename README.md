@@ -29,3 +29,4 @@ I used Flexbox and Grid for the creation and added features like a video backgro
 ![Club Cat Blog Mobile](./preview/ClubCatBlogMobile.gif)
 
 ## License
+MIT License
