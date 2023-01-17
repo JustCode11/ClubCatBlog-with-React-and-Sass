@@ -1,13 +1,16 @@
 {
   "name": "nicepage-club-cat-blog",
   "version": "1.0.0",
+  "homepage": "https://justcode11.github.io/clubcatblog-with-react-and-sass",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./public/index.html",
     "build": "parcel build ./public/index.html --public-url .",
-    "compile:sass": "sass --watch src/styles:assets/css"
+    "compile:sass": "sass --watch src/styles:assets/css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "JustCode11",
   "license": "ISC",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "@parcel/resolver-glob": "^2.8.2",
+    "gh-pages": "^4.0.0",
     "process": "^0.11.10",
     "sass": "^1.57.1"
   }
